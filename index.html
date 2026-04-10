@@ -1,23 +1,115 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>My Website</title>
+  <meta charset="UTF-8">
+  <title>Sourdough Bakery</title>
   <style>
     body {
-      font-family: Arial;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #faf7f2;
+    }
+    header {
+      background: #8b5e3c;
+      color: white;
+      padding: 1rem;
       text-align: center;
-      background-color: #f4f4f4;
     }
-    h1 {
-      color: #333;
+    .products {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-    p {
-      color: #666;
+    .product {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      width: 250px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    button {
+      background: #8b5e3c;
+      color: white;
+      border: none;
+      padding: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    #cart {
+      padding: 20px;
+      background: #fff;
+      margin: 20px;
+      border-radius: 10px;
     }
   </style>
 </head>
 <body>
-  <h1>Hello 👋</h1>
-  <p>Welcome to my website!</p>
+
+<header>
+  <h1>My Sourdough Bakery</h1>
+  <p>Fresh, homemade sourdough goods 🍞</p>
+</header>
+
+<section class="products">
+  <div class="product">
+    <img src="bread.jpg" alt="Sourdough Bread">
+    <h3>Classic Sourdough</h3>
+    <p>$8</p>
+    <button onclick="addToCart('Classic Sourdough', 8)">Add to Cart</button>
+  </div>
+
+  <div class="product">
+    <img src="bagel.jpg" alt="Sourdough Bagels">
+    <h3>Sourdough Bagels (4)</h3>
+    <p>$6</p>
+    <button onclick="addToCart('Bagels', 6)">Add to Cart</button>
+  </div>
+</section>
+
+<section id="cart">
+  <h2>Your Cart</h2>
+  <ul id="cart-items"></ul>
+  <p><strong>Total: $<span id="total">0</span></strong></p>
+  <button onclick="checkout()">Checkout</button>
+</section>
+
+<script>
+  let cart = [];
+  let total = 0;
+
+  function addToCart(name, price) {
+    cart.push({ name, price });
+    total += price;
+    renderCart();
+  }
+
+  function renderCart() {
+    const list = document.getElementById("cart-items");
+    const totalEl = document.getElementById("total");
+
+    list.innerHTML = "";
+    cart.forEach(item => {
+      const li = document.createElement("li");
+      li.textContent = `${item.name} - $${item.price}`;
+      list.appendChild(li);
+    });
+
+    totalEl.textContent = total;
+  }
+
+  function checkout() {
+    alert("Proceeding to payment...");
+    window.location.href = "/checkout.html";
+  }
+</script>
+
 </body>
 </html>
