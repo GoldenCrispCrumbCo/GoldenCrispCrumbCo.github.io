@@ -5,7 +5,25 @@
   <title>Golden Crisp Crumb Co.</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<head>
+ <style>
+  .products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
 
+.product {
+  background: #4e342e;
+  color: #f3e9dc;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
   <style>
     body {
       margin: 0;
@@ -105,30 +123,65 @@
   <p>Slow fermented • Fresh baked • Cozy & homemade</p>
 </header>
 
-<section class="about">
-  <h2>Welcome ☕</h2>
-  <p>
-    I bake small-batch sourdough goods with simple ingredients and lots of care.
-    Everything is naturally fermented for the best flavor and texture.🤎
-  </p>
-</section>
-
 <section class="products">
 
   <div class="product">
-    <img src="bread.jpg">
-    <h3>Classic Sourdough Loaf</h3>
-    <p>$8</p>
-<button onclick="orderNow('Classic Sourdough - $10')">
-  Order Now
-</button>
-  <div class="product">
-    <img src="bagel.jpg">
-    <h3>Sourdough Bagels (4)</h3>
+    <h3>Plain Sourdough</h3>
     <p>$10</p>
-    <button onclick="orderNow('Classic Sourdough - $8')">
-  Order Now
-</button>
+    <button onclick="orderNow('Plain Sourdough - $10')">Order Now</button>
+  </div>
+
+  <div class="product">
+    <h3>Jalapeño Cheddar Sourdough</h3>
+    <p>$15</p>
+    <button onclick="orderNow('Jalapeño Cheddar Sourdough - $15')">Order Now</button>
+  </div>
+
+  <div class="product">
+    <h3>Everything Bagel Sourdough</h3>
+    <p>$12</p>
+    <button onclick="orderNow('Everything Bagel Sourdough - $12')">Order Now</button>
+  </div>
+
+  <div class="product">
+    <h3>Italian Herbs & Cheese Sourdough</h3>
+    <p>$15</p>
+    <button onclick="orderNow('Italian Herbs & Cheese Sourdough - $15')">Order Now</button>
+  </div>
+
+  <div class="product">
+    <h3>Chocolate Chip Cookies</h3>
+    <p>1 = $2 | 6 = $12 | 12 = $20</p>
+    <button onclick="orderNow('Chocolate Chip Cookies - specify qty (1/6/12)')">
+      Order Now
+    </button>
+  </div>
+
+  <div class="product">
+    <h3>Heath Cookies</h3>
+    <p>1 = $2 | 6 = $12 | 12 = $20</p>
+    <button onclick="orderNow('Heath Cookies - specify qty (1/6/12)')">
+      Order Now
+    </button>
+  </div>
+
+  <div class="product">
+    <h3>Plain Bagels</h3>
+    <p>4 = $10 | 8 = $18</p>
+    <button onclick="orderNow('Plain Bagels - specify 4 or 8 pack')">
+      Order Now
+    </button>
+  </div>
+
+  <div class="product">
+    <h3>Everything Seasoning Bagels</h3>
+    <p>4 = $10 | 8 = $20</p>
+    <button onclick="orderNow('Everything Bagels - specify 4 or 8 pack')">
+      Order Now
+    </button>
+  </div>
+
+</section>
 
 </section>
 
@@ -146,6 +199,6 @@ function orderNow(item) {
   const note = encodeURIComponent("Order: " + item);
 
   window.location.href =
-    "https://venmo.com/goldencrispcrumbco?note=" + note;
+    "https://venmo.com/YOUR_USERNAME?note=" + note;
 }
 </script>
