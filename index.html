@@ -2,40 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Golden Crisp Crumb Co.</title>
+  <title>Sweet Starter Sourdough</title>
 
-  <!-- Cute Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
     body {
-      font-family: 'Quicksand', sans-serif;
-      background: #fff6f0;
       margin: 0;
-      color: #fdf6e3;
+      background: #f5efe6; /* warm cream */
+      font-family: 'Quicksand', sans-serif;
+      color: #4b3832;
     }
 
     header {
-     background: #fff6f0;
+      background: #6f4e37; /* coffee brown */
+      color: #fff;
       text-align: center;
-      padding: 40px 20px;
+      padding: 50px 20px;
       border-bottom-left-radius: 30px;
       border-bottom-right-radius: 30px;
     }
 
     header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3em;
       margin: 0;
-      font-size: 2.8em;
     }
 
     header p {
       margin-top: 10px;
       font-size: 1.2em;
+      opacity: 0.9;
     }
 
     .about {
       text-align: center;
-      padding: 30px;
+      padding: 40px 20px;
       max-width: 600px;
       margin: auto;
     }
@@ -49,17 +51,17 @@
     }
 
     .product {
-      background: #ffffff;
-      padding: 20px;
+      background: #fffaf3;
       border-radius: 20px;
       width: 260px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+      padding: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
       text-align: center;
-      transition: transform 0.2s;
+      transition: all 0.2s ease;
     }
 
     .product:hover {
-      transform: scale(1.05);
+      transform: translateY(-5px);
     }
 
     .product img {
@@ -67,27 +69,31 @@
       border-radius: 15px;
     }
 
+    h2 {
+      font-family: 'Playfair Display', serif;
+    }
+
     button {
-      background: #ffb6b9;
+      background: #8b5e3c; /* warm brown */
       color: white;
       border: none;
       padding: 12px;
       margin-top: 12px;
       border-radius: 10px;
       cursor: pointer;
-      font-size: 16px;
       width: 100%;
+      font-size: 15px;
     }
 
     button:hover {
-      background: #d17655;
+      background: #5c3b28;
     }
 
     footer {
       text-align: center;
-      padding: 25px;
+      padding: 30px;
+      color: #7a5c4d;
       font-size: 14px;
-      color: #8a6a58;
     }
   </style>
 </head>
@@ -95,38 +101,39 @@
 <body>
 
 <header>
-  <h1>Golden Crisp Crumb Co. 🍞</h1>
-  <p>Homemade • Fresh • Made with love</p>
+  <h1>Sweet Starter Sourdough 🍞</h1>
+  <p>Slow fermented • Fresh baked • Cozy & homemade</p>
 </header>
 
 <section class="about">
-  <h2>Hi! 💛</h2>
+  <h2>Welcome ☕</h2>
   <p>
-    I bake small-batch sourdough goods using natural fermentation and simple ingredients.
-    Everything is made fresh and with care—perfect for cozy mornings and sharing!
+    I bake small-batch sourdough goods with simple ingredients and lots of care.
+    Everything is naturally fermented for the best flavor and texture.
+    Perfect with coffee and cozy mornings 🤎
   </p>
 </section>
 
 <section class="products">
 
   <div class="product">
-    <img src="bread.jpg" alt="Sourdough Bread">
-    <h3>Classic Sourdough</h3>
+    <img src="bread.jpg">
+    <h3>Classic Sourdough Loaf</h3>
     <p>$8</p>
-    <button onclick="buyBread()">Buy Now</button>
+    <button onclick="buyBread()">Order Now</button>
   </div>
 
   <div class="product">
-    <img src="bagel.jpg" alt="Bagels">
-    <h3>Bagels (4)</h3>
+    <img src="bagel.jpg">
+    <h3>Sourdough Bagels (4)</h3>
     <p>$6</p>
-    <button onclick="buyBagels()">Buy Now</button>
+    <button onclick="buyBagels()">Order Now</button>
   </div>
 
 </section>
 
 <footer>
-  <p>✨ Thank you for supporting homemade baking ✨</p>
+  <p>Made with love 🤎 Thank you for supporting homemade baking</p>
 </footer>
 
 <script>
