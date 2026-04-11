@@ -141,15 +141,7 @@
     <p>$12</p>
     <button onclick="orderNow('Everything Bagel Sourdough - $12')">Order Now</button>
   </div>
-  
-<div class="product">
-  <h3>Cinnamon Sugar Swirl Sourdough</h3>
-  <p>$12</p>
-  <button onclick="orderNow('Cinnamon Sugar Swirl Sourdough - $12')">
-    Order Now
-  </button>
-</div>
-  
+
   <div class="product">
     <h3>Italian Herbs & Cheese Sourdough</h3>
     <p>$15</p>
@@ -196,14 +188,11 @@
 
 <script>
 function orderNow(item) {
-  const note = encodeURIComponent(
-    "Golden Crisp Crumb Co. Order 🍪 | " + item + " | Name: ____"
-  );
-
+  const note = encodeURIComponent("Order: " + item);
   window.location.href =
     "https://venmo.com/goldencrispcrumbco?note=" + note;
 }
-</script>
+
 function closeModal() {
   document.getElementById("welcomeModal").classList.add("hidden");
 }
