@@ -4,29 +4,38 @@
   <meta charset="UTF-8">
   <title>Sweet Starter Sourdough</title>
 
+  <!-- Cute Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      background: #fff8f3;
+      font-family: 'Quicksand', sans-serif;
+      background: #fff6f0;
       margin: 0;
-      color: #5a3e2b;
+      color: #6b4c3b;
     }
 
     header {
-      background: #d9a77a;
-      color: white;
+      background: #f4c2a1;
       text-align: center;
-      padding: 30px;
+      padding: 40px 20px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2.5em;
+      font-size: 2.8em;
+    }
+
+    header p {
+      margin-top: 10px;
+      font-size: 1.2em;
     }
 
     .about {
       text-align: center;
-      padding: 20px;
+      padding: 30px;
       max-width: 600px;
       margin: auto;
     }
@@ -35,43 +44,50 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 25px;
+      gap: 30px;
       padding: 20px;
     }
 
     .product {
-      background: white;
-      padding: 15px;
-      border-radius: 15px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 20px;
       width: 260px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.08);
       text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .product:hover {
+      transform: scale(1.05);
     }
 
     .product img {
       width: 100%;
-      border-radius: 12px;
+      border-radius: 15px;
     }
 
     button {
-      background: #c47a4a;
+      background: #e08e6d;
       color: white;
       border: none;
       padding: 12px;
-      margin-top: 10px;
-      border-radius: 8px;
+      margin-top: 12px;
+      border-radius: 10px;
       cursor: pointer;
       font-size: 16px;
+      width: 100%;
     }
 
     button:hover {
-      background: #a65f35;
+      background: #d17655;
     }
 
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       font-size: 14px;
+      color: #8a6a58;
     }
   </style>
 </head>
@@ -80,50 +96,45 @@
 
 <header>
   <h1>Sweet Starter Sourdough 🍞</h1>
-  <p>Homemade with love & natural fermentation</p>
+  <p>Homemade • Fresh • Made with love</p>
 </header>
 
 <section class="about">
-  <h2>Welcome!</h2>
+  <h2>Hi! 💛</h2>
   <p>
-    I make fresh, homemade sourdough baked goods in small batches.
-    Everything is naturally fermented and baked with care 💛  
-    Perfect for cozy mornings and sharing with family!
+    I bake small-batch sourdough goods using natural fermentation and simple ingredients.
+    Everything is made fresh and with care—perfect for cozy mornings and sharing!
   </p>
 </section>
 
 <section class="products">
 
-  <!-- PRODUCT 1 -->
   <div class="product">
     <img src="bread.jpg" alt="Sourdough Bread">
-    <h3>Classic Sourdough Loaf</h3>
+    <h3>Classic Sourdough</h3>
     <p>$8</p>
-
-    <button onclick="buyNow()">
-      Buy Now
-    </button>
+    <button onclick="buyBread()">Buy Now</button>
   </div>
 
-  <!-- PRODUCT 2 -->
   <div class="product">
     <img src="bagel.jpg" alt="Bagels">
-    <h3>Sourdough Bagels (4)</h3>
+    <h3>Bagels (4)</h3>
     <p>$6</p>
-
-    <button onclick="buyNow()">
-      Buy Now
-    </button>
+    <button onclick="buyBagels()">Buy Now</button>
   </div>
 
 </section>
 
 <footer>
-  <p>Message me for custom orders 💌</p>
+  <p>✨ Thank you for supporting homemade baking ✨</p>
 </footer>
 
 <script>
-function buyNow() {
+function buyBread() {
+  window.location.href = "https://buy.stripe.com/00w8wQ1eY9jUbLNb0jdEs00";
+}
+
+function buyBagels() {
   window.location.href = "https://buy.stripe.com/00w8wQ1eY9jUbLNb0jdEs00";
 }
 </script>
