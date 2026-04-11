@@ -196,11 +196,14 @@
 
 <script>
 function orderNow(item) {
-  const note = encodeURIComponent("Order: " + item);
+  const note = encodeURIComponent(
+    "Golden Crisp Crumb Co. Order 🍪 | " + item + " | Name: ____"
+  );
+
   window.location.href =
     "https://venmo.com/goldencrispcrumbco?note=" + note;
 }
-
+</script>
 function closeModal() {
   document.getElementById("welcomeModal").classList.add("hidden");
 }
