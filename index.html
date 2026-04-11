@@ -126,8 +126,9 @@
     <img src="bagel.jpg">
     <h3>Sourdough Bagels (4)</h3>
     <p>$6</p>
-    <button onclick="buyBagels()">Order Now</button>
-  </div>
+    <button onclick="orderNow('Classic Sourdough - $8')">
+  Order Now
+</button>
 
 </section>
 
@@ -135,15 +136,16 @@
   <p>Made with love 🤎 Thank you for supporting homemade baking</p>
 </footer>
 
-<script>
-function buyBread() {
-  window.location.href = "https://buy.stripe.com/00w8wQ1eY9jUbLNb0jdEs00";
-}
-
-function buyBagels() {
-  window.location.href = "https://buy.stripe.com/00w8wQ1eY9jUbLNb0jdEs00";
 }
 </script>
 
 </body>
 </html>
+<script>
+function orderNow(item) {
+  const note = encodeURIComponent("Order: " + item);
+
+  window.location.href =
+    "https://venmo.com/YourUsername?note=" + note;
+}
+</script>
