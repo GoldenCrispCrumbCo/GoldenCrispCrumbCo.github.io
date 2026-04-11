@@ -2,58 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sourdough Bakery</title>
+  <title>Sweet Starter Sourdough</title>
 
   <style>
     body {
-      font-family: Arial;
-      background: #faf7f2;
+      font-family: 'Arial', sans-serif;
+      background: #fff8f3;
       margin: 0;
+      color: #5a3e2b;
     }
 
     header {
-      background: #8b5e3c;
+      background: #d9a77a;
       color: white;
       text-align: center;
+      padding: 30px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    .about {
+      text-align: center;
       padding: 20px;
+      max-width: 600px;
+      margin: auto;
     }
 
     .products {
       display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+      padding: 20px;
     }
 
     .product {
       background: white;
       padding: 15px;
-      border-radius: 10px;
-      width: 250px;
+      border-radius: 15px;
+      width: 260px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       text-align: center;
     }
 
-    img {
+    .product img {
       width: 100%;
-      border-radius: 10px;
+      border-radius: 12px;
     }
 
     button {
-      background: #8b5e3c;
+      background: #c47a4a;
       color: white;
       border: none;
-      padding: 10px;
+      padding: 12px;
       margin-top: 10px;
+      border-radius: 8px;
       cursor: pointer;
-      border-radius: 5px;
+      font-size: 16px;
     }
 
-    #cart {
-      background: white;
-      margin: 20px;
+    button:hover {
+      background: #a65f35;
+    }
+
+    footer {
+      text-align: center;
       padding: 20px;
-      border-radius: 10px;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -61,69 +79,51 @@
 <body>
 
 <header>
-  <h1>My Sourdough Bakery</h1>
-  <p>Fresh baked goods 🍞</p>
+  <h1>Sweet Starter Sourdough 🍞</h1>
+  <p>Homemade with love & natural fermentation</p>
 </header>
 
-<div class="products">
+<section class="about">
+  <h2>Welcome!</h2>
+  <p>
+    I make fresh, homemade sourdough baked goods in small batches.
+    Everything is naturally fermented and baked with care 💛  
+    Perfect for cozy mornings and sharing with family!
+  </p>
+</section>
 
+<section class="products">
+
+  <!-- PRODUCT 1 -->
   <div class="product">
-    <img src="bread.jpg">
-    <h3>Classic Sourdough</h3>
+    <img src="bread.jpg" alt="Sourdough Bread">
+    <h3>Classic Sourdough Loaf</h3>
     <p>$8</p>
-    <button onclick="addToCart('Sourdough Bread', 8)">Add to Cart</button>
+
+    <button onclick="buyNow()">
+      Buy Now
+    </button>
   </div>
 
+  <!-- PRODUCT 2 -->
   <div class="product">
-    <img src="bagel.jpg">
-    <h3>Bagels (4)</h3>
+    <img src="bagel.jpg" alt="Bagels">
+    <h3>Sourdough Bagels (4)</h3>
     <p>$6</p>
-    <button onclick="addToCart('Bagels', 6)">Add to Cart</button>
+
+    <button onclick="buyNow()">
+      Buy Now
+    </button>
   </div>
 
-</div>
+</section>
 
-<div id="cart">
-  <h2>Your Cart</h2>
-  <ul id="cart-items"></ul>
-  <p><strong>Total: $<span id="total">0</span></strong></p>
-
-  <button onclick="checkout()">Checkout</button>
-</div>
+<footer>
+  <p>Message me for custom orders 💌</p>
+</footer>
 
 <script>
-let cart = [];
-let total = 0;
-
-function addToCart(name, price) {
-  cart.push({ name, price });
-  total += price;
-  renderCart();
-}
-
-function renderCart() {
-  const list = document.getElementById("cart-items");
-  const totalEl = document.getElementById("total");
-
-  list.innerHTML = "";
-
-  cart.forEach(item => {
-    const li = document.createElement("li");
-    li.textContent = item.name + " - $" + item.price;
-    list.appendChild(li);
-  });
-
-  totalEl.textContent = total;
-}
-
-function checkout() {
-  if (cart.length === 0) {
-    alert("Your cart is empty!");
-    return;
-  }
-
-  alert("You’ll now be redirected to payment.\n\nIMPORTANT: Make sure the amount matches your order.");
-
+function buyNow() {
   window.location.href = "https://buy.stripe.com/00w8wQ1eY9jUbLNb0jdEs00";
 }
 </script>
