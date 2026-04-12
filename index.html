@@ -253,15 +253,12 @@ footer {
   <p>Golden Crisp Crumb Co. • Handmade with care</p>
 </footer>
 
-<script>
+  <script>
 function orderNow(item) {
-  const note = encodeURIComponent("Golden Crisp Crumb Co. 🍪 Order: " + item);
+  const note = "Golden Crisp Crumb Co. 🍪 Order: " + item;
+
   window.location.href =
     "https://venmo.com/goldencrispcrumbco?note=" + note;
-}
-
-function closeModal() {
-  document.getElementById("welcomeModal").classList.add("hidden");
 }
 </script>
 
