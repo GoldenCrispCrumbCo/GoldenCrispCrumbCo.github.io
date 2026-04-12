@@ -4,42 +4,48 @@
 <meta charset="UTF-8">
 <title>Golden Crisp Crumb Co.</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
 
-/* GLOBAL */
+/* BASE */
 body {
   margin: 0;
-  background: #f7f2ec;
+  background: #f8f4ef;
   font-family: 'Quicksand', sans-serif;
-  color: #3e2a23;
+  color: #3b2a24;
 }
 
 /* HEADER */
 header {
   text-align: center;
-  padding: 80px 20px 50px;
+  padding: 90px 20px 40px;
 }
 
 header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 3.2em;
+  font-size: 3.5em;
   margin: 0;
-  letter-spacing: 1px;
 }
 
 header p {
   margin-top: 10px;
-  color: #8c6f5a;
+  color: #8b6f5c;
   font-size: 1.1em;
+}
+
+.location {
+  text-align: center;
+  color: #a1887f;
+  font-size: 0.95em;
+  margin-top: 5px;
 }
 
 /* SECTION TITLE */
 .section-title {
   text-align: center;
   font-family: 'Playfair Display', serif;
-  font-size: 1.8em;
+  font-size: 2em;
   margin-top: 20px;
 }
 
@@ -47,8 +53,8 @@ header p {
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 25px;
-  padding: 40px;
+  gap: 28px;
+  padding: 50px 30px;
   max-width: 1100px;
   margin: auto;
 }
@@ -56,11 +62,11 @@ header p {
 /* CARD */
 .product {
   background: #ffffff;
-  border-radius: 18px;
-  padding: 25px;
+  border-radius: 16px;
+  padding: 26px;
   text-align: center;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  transition: 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  transition: all 0.25s ease;
 }
 
 .product:hover {
@@ -70,24 +76,25 @@ header p {
 /* TEXT */
 .product h3 {
   font-family: 'Playfair Display', serif;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .product p {
-  color: #8c6f5a;
+  color: #8b6f5c;
+  font-size: 0.95em;
 }
 
 /* BUTTON */
 button {
-  background: #3e2a23;
-  color: #fff;
+  background: #3b2a24;
+  color: white;
   border: none;
   padding: 12px;
   margin-top: 15px;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   width: 100%;
-  letter-spacing: 0.5px;
+  font-size: 0.9em;
 }
 
 button:hover {
@@ -97,9 +104,9 @@ button:hover {
 /* FOOTER */
 footer {
   text-align: center;
-  padding: 40px;
+  padding: 50px;
   color: #a1887f;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 /* POPUP */
@@ -109,7 +116,7 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(20,10,8,0.85);
+  background: rgba(20,10,8,0.75);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,21 +129,23 @@ footer {
 
 .modal-box {
   background: #ffffff;
-  color: #3e2a23;
-  padding: 35px;
-  border-radius: 16px;
+  color: #3b2a24;
+  padding: 40px;
+  border-radius: 14px;
   text-align: center;
-  max-width: 400px;
+  max-width: 420px;
 }
 
 .modal-box h2 {
   font-family: 'Playfair Display', serif;
 }
 
+.modal-box p {
+  color: #7b5e4c;
+}
+
 .modal-box button {
   margin-top: 20px;
-  background: #3e2a23;
-  color: white;
 }
 
 </style>
@@ -150,7 +159,8 @@ footer {
     <h2>Welcome ✨</h2>
     <p>
       Each item is handcrafted fresh to order.<br><br>
-      Please allow <strong>3 days</strong> for preparation.
+      Please allow <strong>3 days</strong> for preparation.<br><br>
+      📍 Local pickup available in North Hudson
     </p>
     <button onclick="closeModal()">Enter Shop</button>
   </div>
@@ -159,6 +169,7 @@ footer {
 <header>
   <h1>Golden Crisp Crumb Co.</h1>
   <p>Artisan sourdough & small-batch baked goods</p>
+  <div class="location">📍 North Hudson Pickup</div>
 </header>
 
 <h2 class="section-title">Menu</h2>
@@ -172,9 +183,9 @@ footer {
   </div>
 
   <div class="product">
-    <h3>Jalapeño Cheddar Sourdough/h3>
+    <h3>Jalapeño Cheddar</h3>
     <p>$15</p>
-    <button onclick="orderNow('Jalapeño Cheddar Sourdough - $15')">Order</button>
+    <button onclick="orderNow('Jalapeño Cheddar - $15')">Order</button>
   </div>
 
   <div class="product">
@@ -184,13 +195,13 @@ footer {
   </div>
 
   <div class="product">
-    <h3>Cinnamon Sugar Swirl Sourdough</h3>
+    <h3>Cinnamon Sugar Swirl</h3>
     <p>$12</p>
     <button onclick="orderNow('Cinnamon Sugar Swirl - $12')">Order</button>
   </div>
 
   <div class="product">
-    <h3>Italian Herbs & Cheese Sourdough</h3>
+    <h3>Italian Herbs & Cheese</h3>
     <p>$15</p>
     <button onclick="orderNow('Italian Herbs & Cheese - $15')">Order</button>
   </div>
@@ -198,43 +209,43 @@ footer {
   <div class="product">
     <h3>Chocolate Chip Cookies</h3>
     <p>1 • $2 | 6 • $12 | 12 • $20</p>
-    <button onclick="orderNow('Chocolate Chip Cookies')">Order</button>
+    <button onclick="orderNow('Chocolate Chip Cookies - quantity needed')">Order</button>
   </div>
 
   <div class="product">
     <h3>Heath Cookies</h3>
     <p>1 • $2 | 6 • $12 | 12 • $20</p>
-    <button onclick="orderNow('Heath Cookies')">Order</button>
+    <button onclick="orderNow('Heath Cookies - quantity needed')">Order</button>
   </div>
-  
-<div class="product">
-  <h3>Scones</h3>
-  <p>
-    Blueberry • Chocolate Chip • Lemon • Seasonal<br>
-    Custom flavors available
-  </p>
 
-  <button onclick="orderNow('Scones - choose flavor or request custom')">
-    Order Scones
-  </button>
-</div>
-  
   <div class="product">
     <h3>Plain Bagels</h3>
     <p>4 • $10 | 8 • $18</p>
-    <button onclick="orderNow('Plain Bagels')">Order</button>
+    <button onclick="orderNow('Plain Bagels - quantity needed')">Order</button>
   </div>
 
   <div class="product">
     <h3>Everything Bagels</h3>
     <p>4 • $10 | 8 • $20</p>
-    <button onclick="orderNow('Everything Bagels')">Order</button>
+    <button onclick="orderNow('Everything Bagels - quantity needed')">Order</button>
+  </div>
+
+  <!-- SCONES -->
+  <div class="product">
+    <h3>Scones</h3>
+    <p>
+      Maple Pecan • Lemon Blueberry • Apple Cinnamon<br>
+      <em>Custom flavors available upon request</em>
+    </p>
+    <button onclick="orderNow('Scones - flavor & quantity needed')">
+      Request Order
+    </button>
   </div>
 
 </section>
 
 <footer>
-  <p>Golden Crisp Crumb Co. • Homemade with care</p>
+  <p>Golden Crisp Crumb Co. • Handmade with care</p>
 </footer>
 
 <script>
