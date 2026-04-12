@@ -218,12 +218,12 @@ footer {
     <button onclick="orderNow('Heath Cookies - quantity needed')">Order</button>
   </div>
 
-    <div class="product">
+  <div class="product">
     <h3>Andes Mints Cookies</h3>
     <p>1 • $3 | 6 • $14 | 12 • $24</p>
-    <button onclick="orderNow('Heath Cookies - quantity needed')">Order</button>
+    <button onclick="orderNow('Andes Cookies - quantity needed')">Order</button>
   </div>
-  
+
   <div class="product">
     <h3>Plain Bagels</h3>
     <p>4 • $10 | 8 • $18</p>
@@ -236,11 +236,10 @@ footer {
     <button onclick="orderNow('Everything Bagels - quantity needed')">Order</button>
   </div>
 
-  <!-- SCONES -->
   <div class="product">
     <h3>Scones</h3>
     <p>
-      Maple Pecan • Lemon Blueberry • Apple Cinnamon • Cranberry Orange<br>
+      Maple Pecan • Lemon Blueberry • Apple Cinnamon • Cranberry Orange
     </p>
     <button onclick="orderNow('Scones - flavor & quantity needed')">
       Request Order
@@ -253,12 +252,18 @@ footer {
   <p>Golden Crisp Crumb Co. • Handmade with care</p>
 </footer>
 
-  <script>
+<!-- ✅ FIXED SCRIPT (THIS IS WHAT WAS MISSING) -->
+<script>
 function orderNow(item) {
   const note = "Golden Crisp Crumb Co. 🍪 Order: " + item;
 
   window.location.href =
     "https://venmo.com/goldencrispcrumbco?note=" + note;
+}
+
+/* POPUP CLOSE FIX */
+function closeModal() {
+  document.getElementById("welcomeModal").style.display = "none";
 }
 </script>
 
