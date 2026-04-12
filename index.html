@@ -140,10 +140,6 @@
     <h3>Everything Bagel Sourdough</h3>
     <p>$12</p>
       <div class="product">
-    <h3>Jalapeño Cheddar Sourdough</h3>
-    <p>$15</p>
-    <button onclick="orderNow('JalapeñoCheddarSourdough:$15')">Order Now</button>
-  </div>
     <button onclick="orderNow('EverythingBagelSourdough:$12')">Order Now</button>
   </div>
   
@@ -178,7 +174,7 @@
   <div class="product">
     <h3>Plain Bagels</h3>
     <p>4:$10 | 8:$18</p>
-    <button onclick="orderNow('Plain Bagels - specify 4 or 8 pack')">
+    <button onclick="orderNow('Plain Bagels-4:10,8:18')">
       Order Now
     </button>
   </div>
@@ -186,7 +182,7 @@
   <div class="product">
     <h3>Everything Seasoning Bagels</h3>
     <p>4:$10 | 8:$20</p>
-    <button onclick="orderNow('Everything Bagels - specify 4 or 8 pack')">
+    <button onclick="orderNow('Everything Bagels-4:10,8:18')">
       Order Now
     </button>
   </div>
@@ -204,7 +200,7 @@
 
 <script>
 function orderNow(item) {
-  const note = encodeURIComponent("Order: " + item);
+  const note = encodeURIComponent("Order:"item);
   window.location.href =
     "https://venmo.com/goldencrispcrumbco?note=" + note;
 }
